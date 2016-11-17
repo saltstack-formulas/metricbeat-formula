@@ -1,0 +1,19 @@
+metricbeat:
+  config:
+    metricbeat.modules:
+    - module: system
+      metricsets:
+        - cpu
+        - load
+        - filesystem
+        - fsstat
+        - memory
+        - network
+        - process
+      enabled: true
+      period: 10s
+      processes: ['.*']
+    
+    
+    output.elasticsearch:
+      hosts: ["localhost:9200"]
