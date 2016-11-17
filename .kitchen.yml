@@ -20,6 +20,15 @@ platforms:
 
 suites:
   - name: default
+  - name: config-pillar-set
+    provisioner:
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - metricbeat
+      pillars-from-files:
+        metricbeat.sls: pillar.example
 
 verifier:
   name: shell
