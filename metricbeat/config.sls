@@ -1,7 +1,7 @@
 include:
   - metricbeat.install
 
-{%- if salt['pillar.get']('elasticsearch:config') %}
+{%- if salt['pillar.get']('metricbeat:config') %}
 manage Metricbeat configuration from pillar:
   file.serialize:
     - name: /etc/metricbeat/metricbeat.yml
