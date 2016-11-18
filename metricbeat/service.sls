@@ -8,7 +8,7 @@ start Metricbeat service:
     - enable: True
     - require:
       - pkg: metricbeat
-    {%- if salt['pillar.get']('elasticsearch:config') %}
+    {%- if salt['pillar.get']('metricbeat:config') %}
     - watch:
       - file: /etc/metricbeat/metricbeat.yml
     {%- endif %}
